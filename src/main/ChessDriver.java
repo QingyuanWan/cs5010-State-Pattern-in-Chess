@@ -1,4 +1,4 @@
-package main;
+package main.src.main;
 
 public class ChessDriver {
 

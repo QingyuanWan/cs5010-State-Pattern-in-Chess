@@ -1,6 +1,6 @@
-package states;
+package main.src.states;
 
-import main.*;
+import main.src.main.ChessGame;
 
 public abstract class State {
 	

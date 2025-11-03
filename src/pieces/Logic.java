@@ -1,4 +1,4 @@
-package pieces;
+package main.src.pieces;
 
 /**
  * This class can control the logic of how each chess piece is allowed to move.

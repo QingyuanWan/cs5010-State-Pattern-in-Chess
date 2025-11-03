@@ -1,4 +1,4 @@
-package main;
+package main.src.main;
 
 import java.util.ArrayList;
 
@@ -14,7 +14,7 @@ public class Board {
 	}
 	
 	//Every time we add a node, we need to store what position in the array it is
-	//to know what grid it will correspond to on the board.
+	//to know what grid it will correspond to on the board. 1
 	public void addNode(Node node) {
 		nodes.add(node);
 		int tileNumber = nodes.size();

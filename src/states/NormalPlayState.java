@@ -1,6 +1,7 @@
-package states;
+package main.src.states;
 
-import main.*;
+import main.src.main.ChessGame;
+
 /**
  * Here is a single state class. You will need to add
  * more for this assignment. The states are arguably the most

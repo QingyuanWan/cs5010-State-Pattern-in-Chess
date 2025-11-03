@@ -1,4 +1,4 @@
-package pieces;
+package main.src.pieces;
 
 public abstract class Piece {
 	
