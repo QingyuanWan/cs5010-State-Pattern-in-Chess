@@ -7,6 +7,9 @@ import java.util.Scanner;
  * Driver class to run the ChessGame context in a loop,
  * demonstrating the State Pattern by passing terminal commands
  * to the current state's handleCommand method.
+ * 
+ * @author Mohammad Arshan Shaikh
+ * @version 11/9/2025
  */
 public class ChessDriver {
 

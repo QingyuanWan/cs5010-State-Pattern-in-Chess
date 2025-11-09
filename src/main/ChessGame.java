@@ -7,6 +7,9 @@ import pieces.Piece; // Need this import to initialize the board
 /**
  * The Context class for the State Pattern. It holds the current State
  * and the core game data (like the Board and the current turn).
+ * 
+ * @author Mohammad Arshan Shaikh
+ * @version 11/9/2025
  */
 public class ChessGame {
 
