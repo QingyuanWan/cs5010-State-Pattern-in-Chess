@@ -1,20 +1,20 @@
-package main.src.main;
+package main;
 
 import java.util.ArrayList;
 
 public class Board {
-	
+
 	ArrayList<Node> nodes;
 	int[][] matrix;
-	
+
 	public Board() {
 		nodes = new ArrayList<>();
-		matrix = new int[8][8]; //A board is always an 8x8 grid, so we don't need
-								//a variable to represent different possible sides.
+		matrix = new int[8][8]; // A board is always an 8x8 grid, so we don't need
+								// a variable to represent different possible sides.
 	}
-	
-	//Every time we add a node, we need to store what position in the array it is
-	//to know what grid it will correspond to on the board. 1
+
+	// Every time we add a node, we need to store what position in the array it is
+	// to know what grid it will correspond to on the board. 1
 	public void addNode(Node node) {
 		nodes.add(node);
 		int tileNumber = nodes.size();

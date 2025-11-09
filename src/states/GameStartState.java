@@ -1,9 +1,10 @@
-package main.src.states;
+package states;
 
-import main.src.main.ChessGame;
+import main.ChessGame;
 
 /**
  * Initializes a fresh game (pieces, board, turn) and moves to NormalPlayState.
+ * 
  * @since 1.0
  */
 public class GameStartState extends State {
@@ -14,7 +15,7 @@ public class GameStartState extends State {
 
     @Override
     public void enter() {
-        game.resetPosition();  // sets up board + pieces + whiteToMove = true
+        game.resetPosition(); // sets up board + pieces + whiteToMove = true
         System.out.println("New game initialized. White moves first.");
         game.setState(new NormalPlayState(game));
     }

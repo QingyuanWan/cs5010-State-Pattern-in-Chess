@@ -1,18 +1,18 @@
-package main.src.pieces;
+package pieces;
 
 /**
  * Abstract base class for all chess pieces.
  * 
  * Uses a matrix-style coordinate system:
- *   coordinates[0] = row (0 at top, 7 at bottom)
- *   coordinates[1] = column (0 = 'a' file, 7 = 'h' file)
+ * coordinates[0] = row (0 at top, 7 at bottom)
+ * coordinates[1] = column (0 = 'a' file, 7 = 'h' file)
  * 
  * Color is stored as uppercase "WHITE" or "BLACK".
  */
 public abstract class Piece {
-    
+
     protected int[] coordinates;
-    protected String color;       
+    protected String color;
 
     public Piece(int[] coordinates, String color) {
         this.coordinates = coordinates;
@@ -48,5 +48,3 @@ public abstract class Piece {
     /** Each subclass must define its board symbol (e.g., 'K', 'R', 'P'). */
     public abstract char symbol();
 }
-
-

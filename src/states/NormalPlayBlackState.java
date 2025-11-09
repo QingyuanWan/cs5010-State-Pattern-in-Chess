@@ -1,12 +1,13 @@
-package main.src.states;
+package states;
 
-import main.src.main.ChessGame;
+import main.ChessGame;
+
 /**
  * @author Qingyuan Wan
  * @version 11/05/2025
  *
- * normal play when it is BLACK's turn.
- * parses simple terminal commands and transitions to other states.
+ *          normal play when it is BLACK's turn.
+ *          parses simple terminal commands and transitions to other states.
  */
 public class NormalPlayBlackState extends State {
 
@@ -14,7 +15,7 @@ public class NormalPlayBlackState extends State {
      * @param game
      * @return none
      *
-     * constructor
+     *         constructor
      */
     public NormalPlayBlackState(ChessGame game) {
         super(game);
@@ -22,7 +23,7 @@ public class NormalPlayBlackState extends State {
 
     /**
      * @return string
-     * prompt this state
+     *         prompt this state
      */
     @Override
     public String prompt() {
@@ -34,7 +35,7 @@ public class NormalPlayBlackState extends State {
      * @param line raw input line from terminal
      * @return none
      *
-     * Handle terminal commands for BLACK's turn.
+     *         Handle terminal commands for BLACK's turn.
      */
     @Override
     public void handleCommand(String line) {
@@ -52,7 +53,7 @@ public class NormalPlayBlackState extends State {
             game.setState(new CheckState(game));
         } else if (cmd.equals("resign")) {
             System.out.println("BLACK resigns.");
-            game.setState(new GameOverState(game));
+            game.setState(new GameOverState(game, cmd));
         } else if (cmd.equals("help")) {
             System.out.println("Commands: move xx xx | check | resign | show | reset | help");
         } else if (cmd.equals("show")) {

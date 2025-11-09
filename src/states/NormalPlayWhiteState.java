@@ -1,12 +1,13 @@
-package main.src.states;
+package states;
 
-import main.src.main.ChessGame;
+import main.ChessGame;
+
 /**
  * @author Qingyuan Wan
  * @version 11/05/2025
  *
- * normal play when it is WHITE's turn.
- * parses simple terminal commands and transitions to other states.
+ *          normal play when it is WHITE's turn.
+ *          parses simple terminal commands and transitions to other states.
  */
 public class NormalPlayWhiteState extends State {
 
@@ -14,7 +15,7 @@ public class NormalPlayWhiteState extends State {
      * @param game
      * @return none
      *
-     * constructor
+     *         constructor
      */
     public NormalPlayWhiteState(ChessGame game) {
         super(game);
@@ -22,27 +23,27 @@ public class NormalPlayWhiteState extends State {
 
     /**
      * @return string
-     * prompt this state
+     *         prompt this state
      */
     @Override
     public String prompt() {
         return "[Play] WHITE to move > ";
     }
 
-
     /**
      *
      * @param line raw input line from terminal
      * @return none
      *
-     * Handle terminal commands for WHITE's turn.
+     *         Handle terminal commands for WHITE's turn.
      */
     @Override
     public void handleCommand(String line) {
         var cmd = line.trim().toLowerCase();
 
         if (cmd.startsWith("move ")) {
-            // plrease implement tryMove and toggleTurn, tryMove use termina input string for move, take first 5 index
+            // plrease implement tryMove and toggleTurn, tryMove use termina input string
+            // for move, take first 5 index
             if (game.tryMove(cmd.substring(5))) {
                 game.toggleTurn();
                 game.setState(new NormalPlayBlackState(game));
@@ -52,7 +53,7 @@ public class NormalPlayWhiteState extends State {
             game.setState(new CheckState(game));
         } else if (cmd.equals("resign")) {
             System.out.println("WHITE resigns.");
-            game.setState(new GameOverState(game));
+            game.setState(new GameOverState(game, cmd));
         } else if (cmd.equals("help")) {
             System.out.println("Commands: move xx xx | check | resign | show | reset | help");
         } else if (cmd.equals("show")) {

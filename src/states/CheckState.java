@@ -1,9 +1,11 @@
-package main.src.states;
+package states;
 
-import main.src.main.ChessGame;
+import main.ChessGame;
 
 /**
- * Check: restricts allowable actions. Demonstrates different behavior vs Normal.
+ * Check: restricts allowable actions. Demonstrates different behavior vs
+ * Normal.
+ * 
  * @since 1.0
  */
 public class CheckState extends State {
@@ -25,11 +27,11 @@ public class CheckState extends State {
             case "help" -> System.out.println("Commands: move <...> | checkmate | resign | show | reset | help");
             case "resign" -> {
                 System.out.println((game.isWhiteToMove() ? "WHITE" : "BLACK") + " resigns while in check.");
-                game.setState(new GameOverState(game));
+                game.setState(new GameOverState(game, cmd));
             }
             case "checkmate" -> {
                 System.out.println("CHECKMATE declared.");
-                game.setState(new CheckmateState(game));
+                game.setState(new CheckmateState(game, cmd));
             }
             case "reset" -> game.setState(new GameStartState(game));
             default -> {

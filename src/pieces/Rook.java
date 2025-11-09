@@ -1,7 +1,7 @@
-package main.src.pieces;
+package pieces;
 
 public class Rook extends Piece {
-	
+
 	/*
 	 * for the rook piece, x and y movement can be any given length,
 	 * but if x has a value, y cannot, and the opposite is true for y.
@@ -10,10 +10,16 @@ public class Rook extends Piece {
 	 */
 	int xMovement;
 	int yMovement;
-	
+
 	public Rook(int[] coordinates2, String color2) {
 		super(coordinates2, color2);
-		
+
+	}
+
+	@Override
+	public char symbol() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'symbol'");
 	}
 
 }

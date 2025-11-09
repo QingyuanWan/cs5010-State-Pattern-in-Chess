@@ -1,6 +1,6 @@
-package main.src.states;
+package states;
 
-import main.src.main.ChessGame;
+import main.ChessGame;
 
 public abstract class State {
 
@@ -9,6 +9,7 @@ public abstract class State {
 
     /**
      * Constructs a State bound to a game context.
+     * 
      * @param game the ChessGame context
      */
     protected State(ChessGame game) {
@@ -16,13 +17,16 @@ public abstract class State {
     }
 
     /** Called once when the state becomes active. */
-    public void enter() { }
+    public void enter() {
+    }
 
     /** Called once when the state is about to be replaced. */
-    public void exit() { }
+    public void exit() {
+    }
 
     /**
      * A short message indicating what the player should do in this state.
+     * 
      * @return prompt text
      */
     public String prompt() {
@@ -31,6 +35,7 @@ public abstract class State {
 
     /**
      * Human-readable state name, used in prompts and logs.
+     * 
      * @return state name
      */
     public String name() {

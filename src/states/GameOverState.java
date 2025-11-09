@@ -1,35 +1,33 @@
-package main.src.states;
+package states;
 
-import main.src.main.ChessGame;
+import main.ChessGame;
 
 /**
  * @author Qingyuan Wan
  * @version 11/05/2025
  *
- * state after the game has ended (checkmate, resign).
- * commands: show | help | reset | quit.
+ *          state after the game has ended (checkmate, resign).
+ *          commands: show | help | reset | quit.
  */
 public class GameOverState extends State {
 
     private final String reason; // e.g., "checkmate by WHITE", "resigned", etc.
 
-
     /**
-     * @param game game context
+     * @param game   game context
      * @param reason end reason text
      * @return none
      *
-     * consturtor
+     *         consturtor
      */
     public GameOverState(ChessGame game, String reason) {
         super(game);
         this.reason = reason;
     }
 
-
     /**
      * @return none
-     * Prints final message and available commands.
+     *         Prints final message and available commands.
      */
     @Override
     public void enter() {
@@ -37,13 +35,12 @@ public class GameOverState extends State {
         System.out.println("      Commands: show | help | reset | quit");
     }
 
-
     /**
      * @param line raw input line from terminal
      * @return none
      *
      *
-     * terminal commands
+     *         terminal commands
      */
     @Override
     public void handleCommand(String line) {

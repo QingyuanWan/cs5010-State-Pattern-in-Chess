@@ -1,4 +1,4 @@
-package main.src.pieces;
+package pieces;
 
 public class Pawn extends Piece {
 
@@ -15,7 +15,8 @@ public class Pawn extends Piece {
     }
 
     /**
-     * Returns true if this pawn is on its starting rank and may ATTEMPT a double step.
+     * Returns true if this pawn is on its starting rank and may ATTEMPT a double
+     * step.
      * WHITE: row == 6; BLACK: row == 1.
      * Path blocking / legality is handled by Logic.
      */

@@ -1,12 +1,13 @@
-package main.src.states;
+package states;
 
-import main.src.main.ChessGame;
+import main.ChessGame;
 
 /**
  * @version 11/05/2025
  *
- * Compatibility shim. Immediately forwards to the correct side-specific play state.
- * Prefer using NormalPlayWhiteState / NormalPlayBlackState directly.
+ *          Compatibility shim. Immediately forwards to the correct
+ *          side-specific play state.
+ *          Prefer using NormalPlayWhiteState / NormalPlayBlackState directly.
  */
 public class NormalPlayState extends State {
 
@@ -14,11 +15,13 @@ public class NormalPlayState extends State {
      * @param game game context
      * @return none
      */
-    public NormalPlayState(ChessGame game) { super(game); }
-
+    public NormalPlayState(ChessGame game) {
+        super(game);
+    }
 
     /**
      * Immediately route to WHITE or BLACK play state on activation.
+     * 
      * @return none
      */
     @Override
@@ -46,4 +49,3 @@ public class NormalPlayState extends State {
         }
     }
 }
-
