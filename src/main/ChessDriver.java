@@ -23,9 +23,6 @@ public class ChessDriver {
 		// Set the initial state to GameStartState for a clean demo
 		game.setState(new GameStartState(game));
 
-		// The GameStartState immediately transitions to NormalPlayState via its enter()
-		game.getState().enter();
-
 		// --- Interactive Game Loop ---
 		Scanner scanner = new Scanner(System.in);
 		String input;
