@@ -18,8 +18,8 @@ public class Rook extends Piece {
 
 	@Override
 	public char symbol() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'symbol'");
+		// White rook = 'R', black rook = 'r'
+		return "WHITE".equalsIgnoreCase(color) ? 'R' : 'r';
 	}
 
 }

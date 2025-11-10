@@ -15,7 +15,7 @@ public class King extends Piece {
 
 	@Override
 	public char symbol() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'symbol'");
+		// White king = 'K', black king = 'k'
+		return "WHITE".equalsIgnoreCase(color) ? 'K' : 'k';
 	}
 }
