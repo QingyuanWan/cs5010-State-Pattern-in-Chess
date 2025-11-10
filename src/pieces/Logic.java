@@ -119,6 +119,15 @@ public class Logic {
                 if (dc == 0 && dest == null && dr == dir)
                     return true;
 
+                // double forward push from starting position
+                if (dc == 0 && dest == null && dr == 2 * dir) {
+                    // Check if pawn is on starting rank
+                    if ((isWhite(mover) && fr == 6) || (!isWhite(mover) && fr == 1)) {
+                        // Check path is clear
+                        return board[fr + dir][fc] == null;
+                    }
+                }
+
                 // diagonal capture
                 if (Math.abs(dc) == 1 && dr == dir && dest != null &&
                         !equalsIgnoreCase(dest.getColor(), mover.getColor())) {
