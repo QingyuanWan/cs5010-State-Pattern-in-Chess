@@ -54,7 +54,7 @@ public class NormalPlayWhiteState extends State {
                 } else if (Logic.isInCheck(game.getBoard(), toMove)) {
                     game.setState(new CheckState(game));
                 } else {
-                    game.setState(new NormalPlayWhiteState(game));
+                    game.setState(new NormalPlayBlackState(game));
                 }
             }
         } else if (cmd.equals("check")) {

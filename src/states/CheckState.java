@@ -6,6 +6,7 @@ import main.ChessGame;
  * Check: restricts allowable actions. Demonstrates different behavior vs
  * Normal.
  * 
+ * @author Abhishek Amkamgari
  * @since 1.0
  */
 public class CheckState extends State {

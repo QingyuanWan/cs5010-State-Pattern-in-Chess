@@ -7,6 +7,10 @@ public class Rook extends Piece {
 	 * but if x has a value, y cannot, and the opposite is true for y.
 	 * The logic to control this behavior should probably be wrapped up
 	 * in another class.
+	 * 
+	 * @author Kavitha Raavi
+	 * @version 1.0
+	 * 
 	 */
 	int xMovement;
 	int yMovement;

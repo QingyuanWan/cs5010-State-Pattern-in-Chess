@@ -5,6 +5,7 @@ import main.ChessGame;
 /**
  * Initializes a fresh game (pieces, board, turn) and moves to NormalPlayState.
  * 
+ * @author Abhishek Amkamgari
  * @since 1.0
  */
 public class GameStartState extends State {
