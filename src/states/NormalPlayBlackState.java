@@ -1,7 +1,7 @@
 package states;
 
 import main.ChessGame;
-
+import pieces.Logic;
 /**
  * @author Qingyuan Wan
  * @version 11/05/2025
@@ -42,11 +42,19 @@ public class NormalPlayBlackState extends State {
         var cmd = line.trim().toLowerCase();
 
         if (cmd.startsWith("move ")) {
-            // please implement tryMove and toggleTurn in ChessGame;
             // tryMove consumes the terminal input after "move " via substring(5)
             if (game.tryMove(cmd.substring(5))) {
+                // Toggle to opponent and decide next state based on check/checkmate
                 game.toggleTurn();
-                game.setState(new NormalPlayWhiteState(game));
+                String toMove = game.isWhiteToMove() ? "WHITE" : "BLACK";
+                if (Logic.isCheckmated(game.getBoard(), toMove)) {
+                    String winner = game.isWhiteToMove() ? "BLACK" : "WHITE";
+                    game.setState(new CheckmateState(game, winner));
+                } else if (Logic.isInCheck(game.getBoard(), toMove)) {
+                    game.setState(new CheckState(game));
+                } else {
+                    game.setState(new NormalPlayWhiteState(game));
+                }
             }
         } else if (cmd.equals("check")) {
             System.out.println("BLACK king placed in CHECK.");
