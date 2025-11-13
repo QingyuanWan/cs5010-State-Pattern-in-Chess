@@ -6,6 +6,11 @@ package pieces;
  * - Coordinates: row 0 = rank 8 (top), row 7 = rank 1 (bottom); col 0 = 'a'
  * - WHITE moves "up" (row-1), BLACK moves "down" (row+1)
  * - No castling, en passant, double pawn push, or promotion.
+ * 
+ * @author Christoph Dittrich
+ * @author Abhishek Amkamgari
+ * 
+ * @version 1.0
  */
 public class Logic {
 

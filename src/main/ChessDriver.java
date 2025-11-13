@@ -9,6 +9,7 @@ import java.util.Scanner;
  * to the current state's handleCommand method.
  * 
  * @author Mohammad Arshan Shaikh
+ * @author Abhishek Amkamgari
  * @version 11/9/2025
  */
 public class ChessDriver {
