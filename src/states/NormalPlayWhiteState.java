@@ -1,6 +1,7 @@
 package states;
 
 import main.ChessGame;
+import pieces.Logic;
 
 /**
  * @author Qingyuan Wan
@@ -42,11 +43,19 @@ public class NormalPlayWhiteState extends State {
         var cmd = line.trim().toLowerCase();
 
         if (cmd.startsWith("move ")) {
-            // plrease implement tryMove and toggleTurn, tryMove use termina input string
             // for move, take first 5 index
             if (game.tryMove(cmd.substring(5))) {
+                // Toggle to opponent and decide next state based on check/checkmate
                 game.toggleTurn();
-                game.setState(new NormalPlayBlackState(game));
+                String toMove = game.isWhiteToMove() ? "WHITE" : "BLACK";
+                if (Logic.isCheckmated(game.getBoard(), toMove)) {
+                    String winner = game.isWhiteToMove() ? "BLACK" : "WHITE";
+                    game.setState(new CheckmateState(game, winner));
+                } else if (Logic.isInCheck(game.getBoard(), toMove)) {
+                    game.setState(new CheckState(game));
+                } else {
+                    game.setState(new NormalPlayWhiteState(game));
+                }
             }
         } else if (cmd.equals("check")) {
             System.out.println("WHITE king placed in CHECK.");

@@ -65,6 +65,11 @@ public class ChessGame {
 		return isWhiteToMove;
 	}
 
+    /** Returns the underlying board array (for rule checks). */
+    public Piece[][] getBoard() {
+        return board;
+    }
+
 	/**
 	 * Prints the current arrangement of pieces on the 8x8 board to the console.
 	 * If the board has not been initialized (i.e., before the 'reset' command),
